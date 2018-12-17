@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "goods-item": "../../components/goods-item/goods-item",
+    "luck-draw": "../../components/luck-draw/luck-draw"
+  }
+}

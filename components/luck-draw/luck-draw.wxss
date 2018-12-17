@@ -1,0 +1,83 @@
+/* components/luck-draw/luck-draw.wxss */
+
+.luckdraw {
+  text-align: center;
+}
+
+.text {
+  width: 457rpx;
+  height: 180rpx;
+  margin-top: 100rpx;
+  margin-bottom: 60rpx;
+}
+
+.main {
+  width: 618rpx;
+  height: 270rpx;
+  position: relative;
+  margin-left: 87rpx;
+  margin-right: 45rpx;
+  text-align: center;
+}
+
+.main .luckdraw-box {
+  width: 618rpx;
+  height: 262rpx;
+}
+
+.btn {
+  margin-top: 100rpx;
+  width: 518rpx;
+  height: 90rpx;
+  background: #FF6600;
+  color: #fff;
+}
+
+.btn::after{
+  border: none;
+}
+
+.luckdraw-text {
+  position: absolute;
+  width: 424rpx;
+  height: 60rpx;
+  left: 95rpx;
+  bottom: 80rpx;
+  font-size: 36rpx;
+  color: #ffffff;
+}
+
+.content {
+  width: 518rpx;
+  height: 170rpx;
+  position: absolute;
+  top: 46rpx;
+  left: 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .line {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 14rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.content .line image {
+  width: 170rpx;
+  height: 510rpx;
+  border-radius: 14rpx;
+  position: absolute;
+  left: 0px;
+  top: -510rpx;
+}
+
+.content .line .default {
+  top: 0rpx;
+}
+
+.content .line .default-img {
+  top: 0rpx;
+}

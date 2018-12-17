@@ -1,0 +1,26 @@
+<!--components/luck-draw/luck-draw.wxml-->
+<view class='luckdraw'>
+  <image class='text' src='./image/text.png'></image>
+  <view class='main'>
+    <image class='luckdraw-box' src='./image/luckdraw.png'></image>
+    <view class='content'>
+      <view class='line'>
+        <image class='img2' src='./image/line1.png' animation="{{animationData2}}" style="{{defaultStyle}}"></image>
+        <image class='img1' src='./image/line1.png' animation="{{animationData1}}" style="{{defaultStyle}}"></image>
+        <image class='default' wx:if='{{showDefault}}' src='./image/line1.png'></image>
+      </view>
+      <view class='line'>
+        <image class='img2' src='./image/line2.png' animation="{{animationData4}}" style="{{defaultStyle}}"></image>
+        <image class='img1' src='./image/line2.png' animation="{{animationData3}}" style="{{defaultStyle}}"></image>
+        <image class='default' wx:if='{{showDefault}}' src='./image/line2.png'></image>
+      </view>
+      <view class='line'>
+        <image class='img2' src='./image/line3.png' animation="{{animationData6}}" style="{{defaultStyle}}"></image>
+        <image class='img1' src='./image/line3.png' animation="{{animationData5}}" style="{{defaultStyle}}"></image>
+        <image class='default' wx:if='{{showDefault}}' src='./image/line3.png'></image>
+      </view>
+    </view>
+    
+  </view>
+  <button class="btn" disabled="{{disabled}}" animation="{{btnAnimation}}" bindtap="_handleClick">点击抽奖</button>
+</view>

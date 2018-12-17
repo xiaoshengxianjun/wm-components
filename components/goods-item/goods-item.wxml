@@ -1,0 +1,6 @@
+<!--components/goods-item/goods-item.wxml-->
+<view class='goods-item'>
+  <image src='http://36524app.oss-cn-qingdao.aliyuncs.com/newretail/20180903/8ce3cd62388a4fa58f4e95e718da1c17.jpg'></image>
+  <text class='goods-name'>泰国夜猫樱桃味加气酒300ml</text>
+  
+</view>

@@ -1,0 +1,12 @@
+/* components/goods-item/goods-item.wxss */
+.goods-item{
+  width: 350rpx;
+  height: 450rpx;
+  border: 1rpx solid #999;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+.goods-item image{
+  width: 100%;
+  height: 350rpx;
+}
