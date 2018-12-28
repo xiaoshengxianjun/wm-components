@@ -4,21 +4,26 @@ Component({
   behaviors: [],
 
   properties: {
-    myProperty: { // 属性名
-      type: String, // 类型（必填），目前接受的类型包括：String, Number, Boolean, Object, Array, null（表示任意类型）
-      value: '', // 属性初始值（可选），如果未指定则会根据类型选择一个
-      observer: function (newVal, oldVal, changedPath) {
-        // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
-        // 通常 newVal 就是新设置的数据， oldVal 是旧数据
-      }
-    },
     isSameTime: { // 三列动画是否同时启动
       type: Boolean,
       value: false // 默认不同时启动
     },
-    endTime: { // 结束时间，5，代表5个循环后结束，数值越大，动画时间越长
-      type: Number,
-      value: 5
+    hasResult: { // 是否有抽奖结果，用于控制抽奖动画的结束
+      type: Boolean,
+      value: false,
+      observer: function (newVal, oldVal, changedPath) {
+        // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
+        // 通常 newVal 就是新设置的数据， oldVal 是旧数据
+        console.log(newVal)
+        console.log(this.data.isWinPrize)
+        if (newVal) {
+          this._setResult(this.data.isWinPrize)
+        }
+      }
+    },
+    isWinPrize: { // 抽奖结果，是否中奖
+      type: Boolean,
+      value: false
     }
   },
   data: {
@@ -33,9 +38,7 @@ Component({
     animationData5: {}, // 第三列的第一个图片的动画
     animationData6: {}, // 第三列的第二个图片的动画
     btnAnimation: {}, // 按钮的呼吸动画
-    hasResult: false, // 是否有抽奖结果，用于控制抽奖动画的结束
-    isWinPrice: false, // 抽奖结果，是否中奖
-    resultPrice: 0 // 抽奖结果 0 代表为中奖
+    resultPrize: 0 // 抽奖结果 0 代表为中奖
   }, // 私有数据，可用于模板渲染
 
   lifetimes: {
@@ -107,13 +110,13 @@ Component({
       this.setData({
         showDefault: false,
         disabled: true,
-        resultPrice: 0, // 抽奖结果初始化，置为0
+        resultPrize: 0, // 抽奖结果初始化，置为0
         hasResult: false, // 没有抽奖结果
         defaultStyle: 'transform:translateY(0px)!important;' // 强制设置，位置移动设为0
       })
     },
 
-    /* “试试手气”点击事件 */
+    /* “试试手气”点击事件，启动抽奖动画，这里可以添加触发抽奖接口 */
     _handleClick: function () {
       // 点击后触发抽奖动画
       // 判断是否设置三列动画同时启动，如果不同时启动，设置为1秒内的任意毫秒数
@@ -143,10 +146,10 @@ Component({
         this._handleAnimate(3);
       }.bind(this), threeLineTime);
 
-      // 模拟结束
-      setTimeout(function () {
-        this._setResult(true)
-      }.bind(this), 4000)
+      // 触发抽奖接口，该操作可以在组件外部操作，也可以在这里直接操作
+      const myEventDetail = {} // detail对象，提供给事件监听函数，可以在getResult对应的方法中监听到
+      this.triggerEvent('getResult', myEventDetail);
+
     },
 
     /**
@@ -214,9 +217,8 @@ Component({
       }
 
       this.setData({
-        hasResult: true,
-        isWinPrice: result,
-        resultPrice: result ? res : 0
+        isWinPrize: result,
+        resultPrize: result ? res : 0
       })
     },
     /**
@@ -235,8 +237,8 @@ Component({
         duration: 2000,
         timingFunction: 'linear',
       })
-      if (this.data.isWinPrice) {
-        var res = this.data.resultPrice; // 中奖的结果
+      if (this.data.isWinPrize) {
+        var res = this.data.resultPrize; // 中奖的结果
         var templateData = [
           [3, 2, 1],
           [2, 1, 3],

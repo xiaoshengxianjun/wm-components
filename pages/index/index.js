@@ -7,7 +7,9 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    hasResult: false,
+    isWinPrize: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -42,6 +44,7 @@ Page({
         }
       })
     }
+
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -50,5 +53,15 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  /* 点击抽奖按钮操作，在这执行调用抽奖接口操作 */
+  handleLuckDraw: function(e) {
+    console.log(e)
+    setTimeout(function(){
+      this.setData({
+        hasResult: true,
+        isWinPrize: true
+      })
+    }.bind(this), 5000)
   }
 })
