@@ -1,5 +1,5 @@
 # 抽奖游戏组件
-该组件可以直接拷贝到自己的项目目录中，按照正常的组件使用规则引入使用即可。  
+该组件可以直接拷贝到自己的项目目录中，按照正常的小程序组件使用规则引入使用即可。  
 ## 使用示例：
 ```
 <luck-draw hasResult="{{hasResult}}" isWinPrize="{{isWinPrize}}" bind:getResult="handleLuckDraw"></luck-draw>
