@@ -9,7 +9,23 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     hasResult: false,
-    isWinPrize: false
+    isWinPrize: false,
+    goodsList: [{
+      id: 1,
+      name: "泰国夜猫樱桃味加气酒300ml",
+      description: "这里是商品描述",
+      price: 11.5,
+      oldPrice: 18,
+      imageUrl: "../../images/goodsImg.jpg"
+    }, {
+      id: 2,
+      name: "人生好酒，就此一杯",
+      description: "这里是商品描述",
+      price: 3.5,
+      oldPrice: 35,
+        imageUrl: "../../images/goodsImg.jpg"
+    }],
+    addImg: "../../images/iconAdd.png"
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,13 +33,13 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -57,11 +73,15 @@ Page({
   /* 点击抽奖按钮操作，在这执行调用抽奖接口操作 */
   handleLuckDraw: function(e) {
     console.log(e)
-    setTimeout(function(){
+    setTimeout(function() {
       this.setData({
         hasResult: true,
         isWinPrize: true
       })
     }.bind(this), 5000)
+  },
+  /* 商品添加按钮点击事件 */
+  handleClick: function(e) {
+    console.log(e.detail)
   }
 })

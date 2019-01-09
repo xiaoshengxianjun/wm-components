@@ -1,12 +1,53 @@
 /* components/goods-item/goods-item.wxss */
-.goods-item{
+
+.goods-item {
   width: 350rpx;
-  height: 450rpx;
-  border: 1rpx solid #999;
+  height: 490rpx;
+  border: 1rpx solid #dedede;
   overflow: hidden;
   font-size: 28rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
 }
-.goods-item image{
+
+.goods-item .goods-img {
   width: 100%;
   height: 350rpx;
+}
+
+.goods-item .goods-name,.goods-item .goods-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0rpx 10rpx;
+  box-sizing: border-box;
+  height: 40rpx;
+}
+
+.goods-item .goods-desc{
+  font-size: 24rpx;
+}
+
+.goods-item .price-add{
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0rpx 10rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.goods-item .price-add .goods-price{
+  font-size: 20rpx;
+  color: red;
+  font-style: italic;
+  float: left;
+}
+.goods-item .price-add .goods-price text{
+  font-size: 30rpx;
+}
+
+.goods-item .price-add image{
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
 }

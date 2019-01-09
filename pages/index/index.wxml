@@ -11,5 +11,13 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view> -->
-<!-- <goods-item></goods-item> -->
-<luck-draw hasResult="{{hasResult}}" isWinPrize="{{isWinPrize}}" bind:getResult="handleLuckDraw"></luck-draw>
+
+<!-- 老虎机抽奖小游戏 -->
+<!-- <luck-draw hasResult="{{hasResult}}" isWinPrize="{{isWinPrize}}" bind:getResult="handleLuckDraw"></luck-draw> -->
+
+<!-- 商品列表 -->
+<view class='goods-list-box'>
+  <block wx:for="{{goodsList}}" wx:key="{{item.id}}">
+    <goods-item goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-item>
+  </block>
+</view>
