@@ -4,5 +4,7 @@
 ### 已更新组件
  * 抽奖小游戏 <br>
  
- 
 ![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/luckDrawDemoImg.png)
+ * 商品列表单项竖版 <br>
+ 
+![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/goodsItemDemoImg.png)
