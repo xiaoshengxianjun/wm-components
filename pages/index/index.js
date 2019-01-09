@@ -22,8 +22,8 @@ Page({
       name: "人生好酒，就此一杯",
       description: "这里是商品描述",
       price: 3.5,
-      oldPrice: 35,
-        imageUrl: "../../images/goodsImg.jpg"
+      oldPrice: '',
+      imageUrl: "../../images/goodsImg.jpg"
     }],
     addImg: "../../images/iconAdd.png"
   },

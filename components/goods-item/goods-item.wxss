@@ -15,7 +15,7 @@
   height: 350rpx;
 }
 
-.goods-item .goods-name,.goods-item .goods-desc {
+.goods-item .goods-name, .goods-item .goods-desc {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -24,11 +24,11 @@
   height: 40rpx;
 }
 
-.goods-item .goods-desc{
+.goods-item .goods-desc {
   font-size: 24rpx;
 }
 
-.goods-item .price-add{
+.goods-item .price-add {
   height: 50rpx;
   line-height: 50rpx;
   padding: 0rpx 10rpx;
@@ -36,17 +36,25 @@
   overflow: hidden;
 }
 
-.goods-item .price-add .goods-price{
+.goods-item .price-add .goods-price {
   font-size: 20rpx;
   color: red;
   font-style: italic;
   float: left;
 }
-.goods-item .price-add .goods-price text{
+
+.goods-item .price-add .goods-price text {
   font-size: 30rpx;
 }
 
-.goods-item .price-add image{
+.goods-item .price-add .goods-price .goods-oldprice {
+  font-size: 22rpx;
+  color: #999;
+  margin-left: 10rpx;
+  text-decoration: line-through;
+}
+
+.goods-item .price-add image {
   width: 40rpx;
   height: 40rpx;
   float: right;
