@@ -83,5 +83,5 @@ Page({
   /* 商品添加按钮点击事件 */
   handleClick: function(e) {
     console.log(e.detail)
-  }
+  },
 })

@@ -1,6 +1,9 @@
 /**index.wxss**/
-.goods-list-box{
+.goods-item-box{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.goods-list-box{
 }

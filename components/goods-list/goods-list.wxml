@@ -1,2 +1,16 @@
 <!--components/goods-list/goods-list.wxml-->
-<text>components/goods-list/goods-list.wxml</text>
+<view class='goods-list'>
+  <view class='goods-img'>
+    <image src='{{goodsInfo.imageUrl}}'></image>
+  </view>
+  <view class='goods-main'>
+    <view class='goods-name'>{{goodsInfo.name}}</view>
+    <view class='goods-desc'>{{goodsInfo.description}}</view>
+    <view class='goods-label'></view>
+    <view class='price-add'>
+      <text class='goods-price'>￥<text>{{goodsInfo.price}}</text><text class='goods-oldprice'>{{goodsInfo.oldPrice}}</text>
+      </text>
+      <image src='{{addImage}}' data-id='{{goodsInfo.id}}' bindtap='_handleAdd'></image>
+    </view>
+  </view>
+</view>

@@ -33,18 +33,6 @@ Component({
   },
 
   methods: {
-    onMyButtonTap: function() {
-      this.setData({
-        // 更新属性和数据的方法与更新页面数据的方法类似
-      })
-    },
-    // 内部方法建议以下划线开头
-    _myPrivateMethod: function() {
-      // 这里将 data.A[0].B 设为 'myPrivateData'
-      this.setData({
-        'A[0].B': 'myPrivateData'
-      })
-    },
     /**
      * 添加操作，一般执行加入到购物车操作，或者是搜藏操作，
      * 在这里触发外部事件，根据需求，自定义外部事件即可

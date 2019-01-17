@@ -16,8 +16,14 @@
 <!-- <luck-draw hasResult="{{hasResult}}" isWinPrize="{{isWinPrize}}" bind:getResult="handleLuckDraw"></luck-draw> -->
 
 <!-- 商品列表 -->
-<view class='goods-list-box'>
+<!-- <view class='goods-item-box'>
   <block wx:for="{{goodsList}}" wx:key="{{item.id}}">
     <goods-item goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-item>
+  </block>
+</view> -->
+
+<view class='goods-list-box'>
+  <block wx:for="{{goodsList}}" wx:key="{{item.id}}">
+    <goods-list goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-list>
   </block>
 </view>

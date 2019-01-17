@@ -1,1 +1,88 @@
 /* components/goods-list/goods-list.wxss */
+
+.goods-list {
+  height: 200rpx;
+  padding: 20rpx 25rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.goods-list >view {
+  float: left;
+}
+
+.goods-list .goods-img {
+  width: 200rpx;
+  height: 100%;
+  overflow: hidden;
+}
+
+.goods-list .goods-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods-list .goods-main {
+  width: 480rpx;
+  height: 100%;
+  padding-left: 20rpx;
+  overflow: hidden;
+}
+
+.goods-main .goods-name {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
+}
+
+.goods-main .goods-desc {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.goods-main .goods-label {
+  width: 100%;
+  height: 50rpx;
+}
+
+.goods-main .price-add {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+.price-add >text{
+  float: left;
+  font-size: 20rpx;
+  color: red
+}
+
+.price-add >text text{
+  font-size: 28rpx;
+}
+.price-add >text .goods-oldprice{
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 10rpx;
+  text-decoration: line-through;
+}
+.price-add image{
+  float: right;
+  margin-top: 8rpx;
+}
+
+.price-add image {
+  width: 40rpx;
+  height: 40rpx;
+}
