@@ -8,3 +8,7 @@
  * 商品列表单项竖版 <br>
  
 ![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/goodsItemDemoImg.png)
+
+ * 商品列表单项横版 <br>
+ 
+![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/goodsListDemo.png)
