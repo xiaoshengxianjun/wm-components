@@ -1,0 +1,49 @@
+<!--components/plate-number-keyboard/plate-number-keyboard.wxml-->
+<view class='plate-number-keyboard-box' wx:if="{{show}}">
+  <view class='pnk-main'>
+    <view class='pnk-main-title'>
+      <text>请点击选择车牌号：</text>
+      <view class='iconfont icon-arrow-down' bindtap='_closeKeyboard'></view>
+    </view>
+    <view class='pnk-content'>
+      <!-- 省份面板 -->
+      <view class='province-plane' wx:if='{{showProvince}}'>
+        <block wx:for="{{provinceList}}" wx:key="{{index}}">
+          <view class='line'>
+            <view class='number-item' wx:for="{{item}}" wx:for-item="it" wx:key="{{index}}" data-text='{{it}}' bindtap='_handleClick'>{{it}}</view>
+          </view>
+        </block>
+        <!-- <view class='number-item' wx:for="{{provinceList.line1}}" wx:key="{{index}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+        </view>
+        <view class='line'>
+          <view class='number-item' wx:for="{{provinceList.line2}}" wx:key="{{index}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+        </view>
+        <view class='line'>
+          <view class='number-item' wx:for="{{provinceList.line3}}" wx:key="{{index}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+        </view>
+        <view class='line'>
+          <view class='number-item handle-btn' bindtap='_clickChangePlane'>ABC</view>
+          <view class='number-item' wx:for="{{provinceList.line4}}" wx:key="{{index}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+          <view class='number-item handle-btn iconfont icon-huitui'></view> -->
+
+      </view>
+      <!-- 字母数字面板 -->
+      <view class='letter-number-plane' wx:if='{{!showProvince}}'>
+        <view class='line'>
+          <view class='number-item' wx:for="{{letterNumberList.line1}}" wx:key="{{item}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+        </view>
+        <view class='line'>
+          <view class='number-item' wx:for="{{letterNumberList.line2}}" wx:key="{{item}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+        </view>
+        <view class='line'>
+          <view class='number-item' wx:for="{{letterNumberList.line3}}" wx:key="{{item}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+        </view>
+        <view class='line'>
+          <view class='number-item handle-btn' bindtap='_clickChangePlane'>省</view>
+          <view class='number-item' wx:for="{{letterNumberList.line4}}" wx:key="{{item}}" data-text='{{item}}' bindtap='_handleClick'>{{item}}</view>
+          <view class='number-item handle-btn iconfont icon-huitui'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

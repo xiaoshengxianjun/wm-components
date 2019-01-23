@@ -22,8 +22,10 @@
   </block>
 </view> -->
 
-<view class='goods-list-box'>
+<!-- <view class='goods-list-box'>
   <block wx:for="{{goodsList}}" wx:key="{{item.id}}">
     <goods-list goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-list>
   </block>
-</view>
+</view> -->
+
+<plate-number-keyboard></plate-number-keyboard>
