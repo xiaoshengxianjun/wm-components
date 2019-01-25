@@ -1,4 +1,8 @@
 /**index.wxss**/
+page{
+  background: #ededed;
+}
+
 .goods-item-box{
   display: flex;
   justify-content: space-around;

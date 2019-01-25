@@ -17,7 +17,7 @@ Component({
       line3: ['川', '贵', '云', '陕', '甘', '青', '蒙', '贵', '宁', '新'],
       line4: ['藏', '使', '领', '警', '学', '港', '澳']
     },
-    letterNumberList:{
+    letterNumberList: {
       line1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
       line2: ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
       line3: ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
@@ -28,20 +28,25 @@ Component({
 
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-    attached: function () { },
-    moved: function () { },
-    detached: function () { },
+    attached: function() {},
+    moved: function() {},
+    detached: function() {},
   },
 
   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-  attached: function () { }, // 此处attached的声明会被lifetimes字段中的声明覆盖
-  ready: function () { },
+  attached: function() {}, // 此处attached的声明会被lifetimes字段中的声明覆盖
+  ready: function() {
+    // 将结果值置为空
+    this.setData({
+      plateNumber: ''
+    })
+  },
 
   pageLifetimes: {
     // 组件所在页面的生命周期函数
-    show: function () { },
-    hide: function () { },
-    resize: function () { },
+    show: function() {},
+    hide: function() {},
+    resize: function() {},
   },
 
   methods: {
@@ -60,6 +65,51 @@ Component({
       this.setData({
         show: false
       })
+    },
+    /* 触发外部绑定事件，传递结果值 */
+    _handleResult: function() {
+      const myEventDetail = {
+        value: this.data.plateNumber  // 传递到结果文本
+      };
+      // 触发外部绑定事件，传递结果参数
+      this.triggerEvent('getResult', myEventDetail);
+    },
+    /**
+     * 键盘主要键点击事件，将点击内容更新到plateNumber
+     */
+    _handleClick: function(e) {
+      // 如果当前显示的省份面板，当即任意省份后，自动切换到字符面板，同时将结果值的第一个字符修改
+      if (this.data.showProvince) {
+        this.setData({
+          showProvince: false
+        })
+      }
+      let currentResult = this.data.plateNumber; // 当前的结果值
+      let currentText = e.currentTarget.dataset.text; // 当前的操作值
+
+      // 车牌号最多8位，大多数7位，新能源8位，控制不能超过8位数
+      if (currentResult.length < 8) {
+        this.setData({
+          plateNumber: currentResult + currentText
+        })
+
+        this._handleResult();
+      }
+    },
+    /**
+     * 删除回退点击事件
+     */
+    _handleDelete: function() {
+      let currentText = this.data.plateNumber;
+      currentText = currentText.substring(0, currentText.length - 1);
+      // 当当前结果值长度大于0时，可执行删减操作
+      if (currentText.length >= 0) {
+        this.setData({
+          plateNumber: currentText
+        })
+
+        this._handleResult();
+      }
     }
   }
 

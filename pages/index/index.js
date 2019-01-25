@@ -25,7 +25,8 @@ Page({
       oldPrice: '',
       imageUrl: "../../images/goodsImg.jpg"
     }],
-    addImg: "../../images/iconAdd.png"
+    addImg: "../../images/iconAdd.png",
+    plateNumber: '' // 车牌号
   },
   //事件处理函数
   bindViewTap: function() {
@@ -84,4 +85,10 @@ Page({
   handleClick: function(e) {
     console.log(e.detail)
   },
+  /* 车牌号键盘点击事件 */
+  setNumber: function(e) {
+    this.setData({
+      plateNumber: e.detail.value
+    })
+  }
 })

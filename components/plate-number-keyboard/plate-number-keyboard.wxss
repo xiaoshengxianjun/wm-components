@@ -11,7 +11,7 @@ button {
   left: 0rpx;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0);
   z-index: 9999;
 }
 
@@ -51,14 +51,6 @@ button {
   padding: 10rpx;
 }
 
-.province-plane{
-  /* display: none; */
-}
-
-.letter-number-plane{
-  /* display: none; */
-}
-
 .line {
   display: flex;
   justify-content: space-between;
@@ -78,6 +70,10 @@ button {
   line-height: 80rpx;
   background: #fff;
   font-size: 30rpx;
+}
+
+.line .number-item:active{
+  background: #eee;
 }
 
 .line .handle-btn {

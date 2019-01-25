@@ -27,5 +27,5 @@
     <goods-list goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-list>
   </block>
 </view> -->
-
-<plate-number-keyboard></plate-number-keyboard>
+<text>{{plateNumber}}</text>
+<plate-number-keyboard bind:getResult="setNumber"></plate-number-keyboard>
