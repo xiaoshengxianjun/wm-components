@@ -17,3 +17,8 @@
   名称 | 说明
   ---- | ----
   getResult | 在这个方法中可以拿到键盘点击操作的结果值，在该方法中设置更新页面内容
+
+## 示例效果图
+
+![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg1.png)
+![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg2.png)
