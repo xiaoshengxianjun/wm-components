@@ -1,6 +1,6 @@
 <!--components/plate-number-keyboard/plate-number-keyboard.wxml-->
 <view class='plate-number-keyboard-box' wx:if="{{show}}" bindtap='_closeKeyboard'>
-  <view class='pnk-main'>
+  <view class='pnk-main' catchtap='_preventDefault'>
     <view class='pnk-main-title'>
       <text>请点击选择车牌号：</text>
       <view class='iconfont icon-arrow-down' catchtap='_closeKeyboard'></view>

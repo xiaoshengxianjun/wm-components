@@ -27,5 +27,5 @@
     <goods-list goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-list>
   </block>
 </view> -->
-<text>{{plateNumber}}</text>
-<plate-number-keyboard bind:getResult="setNumber"></plate-number-keyboard>
+<input placeholder="请输入车牌号" bindfocus="handleFocus" value="{{plateNumber}}" />
+<plate-number-keyboard show="{{showKeyboard}}" bind:getResult="setNumber" initValue="{{plateNumber}}"></plate-number-keyboard>

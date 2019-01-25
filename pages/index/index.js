@@ -26,7 +26,8 @@ Page({
       imageUrl: "../../images/goodsImg.jpg"
     }],
     addImg: "../../images/iconAdd.png",
-    plateNumber: '' // 车牌号
+    showKeyboard: false, 
+    plateNumber: '沪A12345' // 车牌号
   },
   //事件处理函数
   bindViewTap: function() {
@@ -84,6 +85,12 @@ Page({
   /* 商品添加按钮点击事件 */
   handleClick: function(e) {
     console.log(e.detail)
+  },
+  /* 输入框聚焦显示车牌号键盘 */
+  handleFocus: function(e) {
+    this.setData({
+      showKeyboard: true
+    })
   },
   /* 车牌号键盘点击事件 */
   setNumber: function(e) {

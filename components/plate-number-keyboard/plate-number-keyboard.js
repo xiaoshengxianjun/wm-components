@@ -6,11 +6,15 @@ Component({
   properties: {
     show: { // 控制键盘显示隐藏
       type: Boolean,
-      value: true
+      value: false
+    },
+    initValue: { // 初始化的值
+      type: String,
+      value: ""
     }
   },
   data: {
-    plateNumber: "", // 车牌号
+    plateNumber: "", // 键盘操作结果值
     provinceList: {
       line1: ['京', '津', '渝', '沪', '冀', '晋', '辽', '吉', '黑', '苏'],
       line2: ['浙', '皖', '闽', '赣', '鲁', '豫', '鄂', '湘', '粤', '琼'],
@@ -36,9 +40,9 @@ Component({
   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
   attached: function() {}, // 此处attached的声明会被lifetimes字段中的声明覆盖
   ready: function() {
-    // 将结果值置为空
+    // 如果初始化有值，赋值，否则，置为空
     this.setData({
-      plateNumber: ''
+      plateNumber: this.data.initValue ? this.data.initValue : ''
     })
   },
 
@@ -61,7 +65,8 @@ Component({
     /**
      * 关闭键盘，将键盘隐藏
      */
-    _closeKeyboard: function() {
+    _closeKeyboard: function(e) {
+      console.log(2)
       this.setData({
         show: false
       })
@@ -110,7 +115,11 @@ Component({
 
         this._handleResult();
       }
-    }
+    },
+    /**
+     * 防止点击穿透
+     */
+    _preventDefault: function(e) {}
   }
 
 })
