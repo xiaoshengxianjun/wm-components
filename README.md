@@ -12,3 +12,8 @@
  * 商品列表单项横版 <br>
  
 ![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/goodsListDemo.png)
+
+ * 车牌号专属键盘 <br>
+ 
+![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg1.png)
+![index](https://github.com/xiaoshengxianjun/wm-components/blob/master/demo/plateNumberKeyboardDemoImg2.png)
