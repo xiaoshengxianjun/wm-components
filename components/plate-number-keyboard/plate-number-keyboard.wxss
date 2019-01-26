@@ -11,15 +11,16 @@ button {
   left: 0rpx;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0);
   z-index: 9999;
 }
 
 .pnk-main {
   position: absolute;
-  bottom: 0rpx;
+  bottom: -432rpx;
   left: 0rpx;
-  height: auto;
+  height: 432rpx;
   width: 100%;
   background: #d0d5d9;
 }
@@ -72,7 +73,7 @@ button {
   font-size: 30rpx;
 }
 
-.line .number-item:active{
+.line .number-item:active {
   background: #eee;
 }
 

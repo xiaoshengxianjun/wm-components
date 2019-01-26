@@ -6,6 +6,26 @@ Component({
   properties: {
     show: { // 控制键盘显示隐藏
       type: Boolean,
+      value: false,
+      observer(newVal, oldVal, changedPath) {
+        console.log(newVal)
+        if (newVal) {
+          // 如果当前是显示状态，调用开始动画,弹出键盘
+          const animation = wx.createAnimation({
+            duration: 300
+          })
+          // 立即执行无效，延迟一段时间执行弹出动画
+          setTimeout(function() {
+            animation.translateY(-216).step()
+            this.setData({
+              animationData: animation.export()
+            })
+          }.bind(this), 100);
+        }
+      }
+    },
+    showMain: {
+      type: Boolean,
       value: false
     },
     initValue: { // 初始化的值
@@ -28,6 +48,7 @@ Component({
       line4: ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
     },
     showProvince: true, // 是否显示省份面板，控制省份面板和字符面板显示
+    animationData: {} // 键盘动画
   }, // 私有数据，可用于模板渲染
 
   lifetimes: {
@@ -66,15 +87,26 @@ Component({
      * 关闭键盘，将键盘隐藏
      */
     _closeKeyboard: function(e) {
-      console.log(2)
-      this.setData({
-        show: false
+      // 创建动画，执行键盘面板退出动画，动画结束后隐藏整个键盘组件
+      const animation = wx.createAnimation({
+        duration: 300
       })
+      setTimeout(function() {
+        animation.translateY(0).step()
+        this.setData({
+          animationData: animation.export()
+        })
+        setTimeout(function() {
+          this.setData({
+            show: false
+          })
+        }.bind(this), 300);
+      }.bind(this), 100);
     },
     /* 触发外部绑定事件，传递结果值 */
     _handleResult: function() {
       const myEventDetail = {
-        value: this.data.plateNumber  // 传递到结果文本
+        value: this.data.plateNumber // 传递到结果文本
       };
       // 触发外部绑定事件，传递结果参数
       this.triggerEvent('getResult', myEventDetail);
