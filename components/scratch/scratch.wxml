@@ -1,0 +1,2 @@
+<!--components/scratch/scratch.wxml-->
+<canvas canvas-id='scratchCanvas'></canvas>

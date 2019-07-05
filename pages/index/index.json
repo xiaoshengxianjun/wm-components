@@ -3,6 +3,7 @@
     "goods-list": "../../components/goods-list/goods-list",
     "goods-item": "../../components/goods-item/goods-item",
     "luck-draw": "../../components/luck-draw/luck-draw",
-    "plate-number-keyboard": "../../components/plate-number-keyboard/plate-number-keyboard"
+    "plate-number-keyboard": "../../components/plate-number-keyboard/plate-number-keyboard",
+    "scratch-component": "../../components/scratch/scratch"
   }
 }

@@ -27,5 +27,10 @@
     <goods-list goodsInfo="{{item}}" addImage="{{addImg}}" bind:handleClick="handleClick"></goods-list>
   </block>
 </view> -->
-<input placeholder="请输入车牌号" bindfocus="handleFocus" value="{{plateNumber}}" />
-<plate-number-keyboard show="{{showKeyboard}}" bind:getResult="setNumber" initValue="{{plateNumber}}"></plate-number-keyboard>
+
+<!-- 自定义车牌号键盘 -->
+<!-- <input placeholder="请输入车牌号" bindfocus="handleFocus" value="{{plateNumber}}" />
+<plate-number-keyboard show="{{showKeyboard}}" bind:getResult="setNumber" initValue="{{plateNumber}}"></plate-number-keyboard> -->
+
+<!-- 刮刮乐 -->
+<scratch-component></scratch-component>
