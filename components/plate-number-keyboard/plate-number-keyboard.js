@@ -23,7 +23,7 @@ Component({
             }
           })
 
-          let scrollHeight = Math.floor((width / 375) * 221);
+          let scrollHeight = Math.floor((width / 375) * 216);
 
           // 立即执行无效，延迟一段时间执行弹出动画
           setTimeout(function() {
