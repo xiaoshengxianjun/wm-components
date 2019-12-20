@@ -14,9 +14,20 @@ Component({
           const animation = wx.createAnimation({
             duration: 300
           })
+          
+          // 兼容其他机型的上移距离
+          let width = 0
+          wx.getSystemInfo({
+            success: function (res) {
+              width = res.windowWidth
+            }
+          })
+
+          let scrollHeight = Math.floor((width / 375) * 221);
+
           // 立即执行无效，延迟一段时间执行弹出动画
           setTimeout(function() {
-            animation.translateY(-216).step()
+            animation.translateY(-scrollHeight).step()
             this.setData({
               animationData: animation.export()
             })
